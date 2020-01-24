@@ -177,6 +177,7 @@ namespace MQTT_Processing_Config
         private void MRU_Item_Click(object sender, EventArgs e)
         {
             ToolStripMenuItem item = (ToolStripMenuItem)sender;
+            Program.mru.AddFile(item.ToolTipText);
             OpenFileDialog(item.ToolTipText);
         }
 

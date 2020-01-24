@@ -150,7 +150,16 @@ namespace MQTT_Processing_Config
             return xml;
         }
 
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        private void ctxmnuDelete_Click(object sender, EventArgs e)
+        {
+            if (olvTopic.SelectedItem != null)
+            {
+                config.topicNodes.RemoveAt(olvTopic.SelectedIndex);
+                olvTopic.SetObjects(config.topicNodes);
+            }
+        }
+
+        private void ctxmnuAdd_Click(object sender, EventArgs e)
         {
             TopicNode t = new TopicNode();
             t.SetRegEx(".*", txtSampleTopic.Text);
@@ -203,5 +212,6 @@ namespace MQTT_Processing_Config
             }
             ParseMessage(txtSampleMessage.Text);
         }
+
     }
 }

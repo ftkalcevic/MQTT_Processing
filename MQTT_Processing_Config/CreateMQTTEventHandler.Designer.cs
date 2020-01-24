@@ -63,8 +63,8 @@
             this.olvColumn14 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn12 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ctxmnuAdd = new System.Windows.Forms.ToolStripMenuItem();
+            this.ctxmnuDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
@@ -356,6 +356,7 @@
             this.olvColumn12});
             this.olvTopic.ContextMenuStrip = this.contextMenuStrip;
             this.olvTopic.Cursor = System.Windows.Forms.Cursors.Default;
+            this.olvTopic.FullRowSelect = true;
             this.olvTopic.GridLines = true;
             this.olvTopic.HasCollapsibleGroups = false;
             this.olvTopic.HideSelection = false;
@@ -412,23 +413,24 @@
             // contextMenuStrip
             // 
             this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.toolStripMenuItem2});
+            this.ctxmnuAdd,
+            this.ctxmnuDelete});
             this.contextMenuStrip.Name = "contextMenuStrip";
             this.contextMenuStrip.Size = new System.Drawing.Size(156, 48);
             // 
-            // toolStripMenuItem1
+            // ctxmnuAdd
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(155, 22);
-            this.toolStripMenuItem1.Text = "Add Topic Field";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            this.ctxmnuAdd.Name = "ctxmnuAdd";
+            this.ctxmnuAdd.Size = new System.Drawing.Size(155, 22);
+            this.ctxmnuAdd.Text = "Add Topic Field";
+            this.ctxmnuAdd.Click += new System.EventHandler(this.ctxmnuAdd_Click);
             // 
-            // toolStripMenuItem2
+            // ctxmnuDelete
             // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(155, 22);
-            this.toolStripMenuItem2.Text = "Delete";
+            this.ctxmnuDelete.Name = "ctxmnuDelete";
+            this.ctxmnuDelete.Size = new System.Drawing.Size(155, 22);
+            this.ctxmnuDelete.Text = "Delete";
+            this.ctxmnuDelete.Click += new System.EventHandler(this.ctxmnuDelete_Click);
             // 
             // label8
             // 
@@ -547,8 +549,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem ctxmnuAdd;
+        private System.Windows.Forms.ToolStripMenuItem ctxmnuDelete;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label label7;
         private BrightIdeasSoftware.OLVColumn olvColumn13;
