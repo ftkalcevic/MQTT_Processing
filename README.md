@@ -75,7 +75,7 @@ Field Size | The length of the field.  This must be set for string/VarChar types
 
 ## Service
 
-The MQTT_Processing service will take the MQTT Event Handler files and process then in a background process.  Multiple events are supported.  They all need to run of the same broker (probably an unnecessary limitation).
+The MQTT_Processing service will take the MQTT Event Handler files and process then in a background process.  Multiple events are supported.  They all need to run off the same broker (probably an unnecessary limitation).
 
 MQTT_Processing.exe.config contains the configuration...
 
