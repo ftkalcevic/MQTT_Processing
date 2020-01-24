@@ -64,6 +64,7 @@ namespace MQTT_Processing_Config
 
         public bool CanExpandGetter(object x)
         {
+            System.Diagnostics.Debug.Assert(x != null);
             JsonNode node = (JsonNode)x;
             return node.children.Count > 0;
         }

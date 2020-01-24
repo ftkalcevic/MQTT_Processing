@@ -13,27 +13,10 @@ namespace MQTT_Processing_Config
 
     public partial class TestHandler : Form
     {
-        // handler members
-        string description;
-        string subscribeTopic;
-        string connectionString;
-        string database;
-        string table;
-        List<DatabaseData> fields;
-
-        MqttClient mqttClient;
-        string host;
-        int port;
-
-        IDatabase db;
-
         MqttHandler handler;
 
         public TestHandler(string mqttHost, int mqttPort, System.Xml.XmlDocument xml)
         {
-            host = mqttHost;
-            port = mqttPort;
-
             InitializeComponent();
 
             handler = new MqttHandler("");
