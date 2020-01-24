@@ -22,7 +22,7 @@ The Listen button will start listening for messages matching the topic.
 
 When the message you want to capture appears, stop listening, right click on the row, and select "Create MQTT Event Handler".
 
-There are also main menu options to "Open" an event configuration saved from the "Creaet MQTT Event Handler Screen", or create a "New" event handler, not based on a captured message.
+There are also main menu options to "Open" an event configuration saved from the "Create MQTT Event Handler Screen", or create a "New" event handler, not based on a captured message.
 
 
 ![alt text](doc/CreateMQTTEventHandler.png "Create MQTT Event Handler form")
