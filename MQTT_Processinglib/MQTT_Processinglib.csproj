@@ -51,7 +51,7 @@
     <Compile Include="DatabaseData.cs" />
     <Compile Include="IDatabase.cs" />
     <Compile Include="JsonNode.cs" />
-    <Compile Include="MqqtConfig.cs" />
+    <Compile Include="MqttHandlerConfig.cs" />
     <Compile Include="MqttAppConfig.cs" />
     <Compile Include="MqttHandler.cs" />
     <Compile Include="MqttProcessingApp.cs" />

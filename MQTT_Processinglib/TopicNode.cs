@@ -7,7 +7,7 @@ namespace MQTT_Processinglib
         public string regEx { get; private set; }
         public string sample { get; private set; }
 
-        internal void SetRegEx(string exp, string sampleTopic="")
+        public void SetRegEx(string exp, string sampleTopic="")
         {
             regEx = exp;
             Regex ex = new Regex(exp);

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using uPLibrary.Networking.M2Mqtt;
+using System.Xml;
 
 namespace MQTT_Processinglib
 {
@@ -15,7 +16,7 @@ namespace MQTT_Processinglib
         string name;
         MqttClient mqttClient;
         string clientId;
-        MqqtConfig config;
+        MqttHandlerConfig config;
         IDatabase db;
 
         public MqttHandler(string name)
@@ -25,8 +26,15 @@ namespace MQTT_Processinglib
 
         public void Init(string host, int port, string handlerFile)
         {
-            config = new MqqtConfig();
-            config.UnpackXml(handlerFile);
+            XmlDocument xml = new XmlDocument();
+            xml.Load(handlerFile);
+            Init(host, port, xml);
+        }
+
+        public void Init(string host, int port, XmlDocument xml)
+        {
+            config = new MqttHandlerConfig();
+            config.UnpackXml(xml);
 
             db = new SqlDatabase(); // TODO database selection should be in the config file.
             db.CreateDBObjects(config.connectionString, config.database, config.table, config.activeNodes);

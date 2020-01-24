@@ -20,7 +20,7 @@ namespace MQTT_Processinglib
 
         public void Run()
         {
-            MqttConfig.MqttConfig config = (MqttConfig.MqttConfig)ConfigurationManager.GetSection("mqttConfig");
+            global::MqttConfig.MqttConfig config = (global::MqttConfig.MqttConfig)ConfigurationManager.GetSection("mqttConfig");
             string server = config.BrokerServer;
             int port = config.BrokerPort;
             List<String> handlerConfigs = new List<string>();

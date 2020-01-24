@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.txtLog = new System.Windows.Forms.TextBox();
-            this.btnStart = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -43,17 +42,6 @@
             this.txtLog.Name = "txtLog";
             this.txtLog.Size = new System.Drawing.Size(546, 277);
             this.txtLog.TabIndex = 0;
-            // 
-            // btnStart
-            // 
-            this.btnStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnStart.Location = new System.Drawing.Point(13, 297);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(75, 23);
-            this.btnStart.TabIndex = 1;
-            this.btnStart.Text = "Start";
-            this.btnStart.UseVisualStyleBackColor = true;
-            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // btnClose
             // 
@@ -72,7 +60,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(571, 330);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnStart);
             this.Controls.Add(this.txtLog);
             this.Name = "TestHandler";
             this.Text = "TestHandler";
@@ -85,7 +72,6 @@
         #endregion
 
         private System.Windows.Forms.TextBox txtLog;
-        private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnClose;
     }
 }

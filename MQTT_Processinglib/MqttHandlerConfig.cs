@@ -9,7 +9,7 @@ using System.Data;
 
 namespace MQTT_Processinglib
 {
-    public class MqqtConfig
+    public class MqttHandlerConfig
     {
         public string description;
         public string subscribeTopic;
@@ -23,7 +23,7 @@ namespace MQTT_Processinglib
         public string database;
         public string table;
 
-        public MqqtConfig()
+        public MqttHandlerConfig()
         {
             jsonNodes = new List<JsonNode>();
             allJsonNodes = new List<JsonNode>();
@@ -95,7 +95,7 @@ namespace MQTT_Processinglib
             return j;
         }
 
-        private XmlDocument PackXML()
+        public XmlDocument PackXML()
         {
             XmlDocument xml = new XmlDocument();
 
@@ -150,6 +150,41 @@ namespace MQTT_Processinglib
         }
 
 
+        void iterateJson(JsonNode parent, string parentPath, JObject json)
+        {
+            foreach (var x in json)
+            {
+                string name = x.Key;
+                string value = x.Value.ToString();
+                JTokenType type = x.Value.Type;
 
+                if (type == JTokenType.Object)
+                {
+                    JsonNode newParent = new JsonNode(parentPath, name, type, "");
+                    if (parent != null)
+                        parent.AddChild(newParent);
+                    else
+                        jsonNodes.Add(newParent);
+                    allJsonNodes.Add(newParent);
+                    iterateJson(newParent, parentPath + (parentPath.Length > 0 ? "." : "") + name, (JObject)x.Value);
+                }
+                else
+                {
+                    JsonNode newChild = new JsonNode(parentPath, name, type, value);
+                    if (parent != null)
+                        parent.AddChild(newChild);
+                    else
+                        jsonNodes.Add(newChild);
+                    allJsonNodes.Add(newChild);
+                }
+            }
+        }
+
+
+        public void ParseJSON(string message)
+        {
+            JObject json = (JObject)JsonConvert.DeserializeObject(message);
+            iterateJson(parent: null, parentPath: "", json: json);
+        }
     }
 }

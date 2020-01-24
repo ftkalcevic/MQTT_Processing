@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 
 namespace MQTT_Processinglib
 {
-    class SqlDatabase : IDatabase
+    public class SqlDatabase : IDatabase
     {
         bool hasPrimaryKey = false;
         SqlCommand insertCmd;

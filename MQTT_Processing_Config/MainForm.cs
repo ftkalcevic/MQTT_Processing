@@ -16,13 +16,13 @@ namespace MQTT_Processing_Config
     {
         MqttClient mqttClient;
         bool listening;
-        BindingSource mqqtMessages;
+        BindingSource mqttMessages;
         DataGridViewCellEventArgs mouseLocation;
 
         public MainForm()
         {
             listening = false;
-            mqqtMessages = null;
+            mqttMessages = null;
             InitializeComponent();
             txtMQTTHostname.Text = Properties.Settings.Default.MQTTHost;
             txtMQTTPort.Text = Properties.Settings.Default.MQTTPort.ToString();
@@ -41,8 +41,8 @@ namespace MQTT_Processing_Config
             }
             else
             {
-                mqqtMessages = new BindingSource();
-                dataGridView1.DataSource = mqqtMessages;
+                mqttMessages = new BindingSource();
+                dataGridView1.DataSource = mqttMessages;
                 dataGridView1.AutoSize = true;
 
                 string host = txtMQTTHostname.Text;
@@ -64,7 +64,7 @@ namespace MQTT_Processing_Config
             dataGridView1.Invoke(new Action(() =>
            {
                System.Diagnostics.Debug.WriteLine("Got msg: " + e.Topic + " " + e.Message.ToString());
-               mqqtMessages.Add(new MQTTMessage(e.Topic, Encoding.ASCII.GetString(e.Message)));
+               mqttMessages.Add(new MQTTMessage(e.Topic, Encoding.ASCII.GetString(e.Message)));
            }));
         }
 
@@ -83,7 +83,7 @@ namespace MQTT_Processing_Config
 
         private void EnableMenuItems()
         {
-            menuItemCreateMQTTEvent.Enabled = mqqtMessages != null && mqqtMessages.Current != null;
+            menuItemCreateMQTTEvent.Enabled = mqttMessages != null && mqttMessages.Current != null;
         }
 
         private void menuItemCreateMQTTEvent_Click(object sender, EventArgs e)
