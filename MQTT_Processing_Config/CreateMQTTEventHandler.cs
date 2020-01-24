@@ -26,6 +26,8 @@ namespace MQTT_Processing_Config
             config.sampleTopic = Topic;
             config.sampleMessage = Message;
             ParseMessage(config.sampleMessage);
+            txtSampleTopic.Text = config.sampleTopic;
+            txtSampleMessage.Text = config.sampleMessage;
             txtSubscribeTopic.Text = config.sampleTopic;
         }
 
@@ -190,6 +192,16 @@ namespace MQTT_Processing_Config
             XmlDocument xml = PackXML();
             TestHandler dialog = new TestHandler(mqttHost, mqttPort, xml);
             dialog.ShowDialog(this);
+        }
+
+        private void btnProcessSample_Click(object sender, EventArgs e)
+        {
+            if (config.allJsonNodes.Count != 0)
+            {
+                if (MessageBox.Show("Processing the sample JSON will delete existing configuration", "Process Sample", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.Cancel)
+                    return;
+            }
+            ParseMessage(txtSampleMessage.Text);
         }
     }
 }

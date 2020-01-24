@@ -40,6 +40,7 @@
             this.olvColumn3 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn5 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn6 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn13 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn7 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnCreateTable = new System.Windows.Forms.Button();
@@ -59,6 +60,7 @@
             this.olvColumn9 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn10 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn11 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn14 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn12 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,8 +69,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.olvColumn13 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumn14 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.btnProcessSample = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.treeListView)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.olvTopic)).BeginInit();
@@ -98,7 +99,7 @@
             this.txtSampleTopic.Location = new System.Drawing.Point(16, 30);
             this.txtSampleTopic.Name = "txtSampleTopic";
             this.txtSampleTopic.Size = new System.Drawing.Size(187, 20);
-            this.txtSampleTopic.TabIndex = 2;
+            this.txtSampleTopic.TabIndex = 0;
             // 
             // txtSampleMessage
             // 
@@ -108,7 +109,7 @@
             this.txtSampleMessage.Multiline = true;
             this.txtSampleMessage.Name = "txtSampleMessage";
             this.txtSampleMessage.Size = new System.Drawing.Size(568, 82);
-            this.txtSampleMessage.TabIndex = 3;
+            this.txtSampleMessage.TabIndex = 1;
             // 
             // treeListView
             // 
@@ -140,8 +141,8 @@
             this.treeListView.Location = new System.Drawing.Point(12, 168);
             this.treeListView.Name = "treeListView";
             this.treeListView.ShowGroups = false;
-            this.treeListView.Size = new System.Drawing.Size(776, 197);
-            this.treeListView.TabIndex = 4;
+            this.treeListView.Size = new System.Drawing.Size(776, 235);
+            this.treeListView.TabIndex = 5;
             this.treeListView.UseCompatibleStateImageBehavior = false;
             this.treeListView.View = System.Windows.Forms.View.Details;
             this.treeListView.VirtualMode = true;
@@ -186,6 +187,12 @@
             this.olvColumn6.CellEditUseWholeCell = true;
             this.olvColumn6.Text = "DBType";
             // 
+            // olvColumn13
+            // 
+            this.olvColumn13.AspectName = "dbSize";
+            this.olvColumn13.DisplayIndex = 7;
+            this.olvColumn13.Text = "Field Size";
+            // 
             // olvColumn7
             // 
             this.olvColumn7.AspectName = "primaryKey";
@@ -208,7 +215,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtConnectionString);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(12, 462);
+            this.groupBox1.Location = new System.Drawing.Point(12, 510);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(776, 75);
             this.groupBox1.TabIndex = 5;
@@ -217,37 +224,40 @@
             // 
             // btnCreateTable
             // 
+            this.btnCreateTable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCreateTable.Enabled = false;
-            this.btnCreateTable.Location = new System.Drawing.Point(628, 46);
+            this.btnCreateTable.Location = new System.Drawing.Point(673, 46);
             this.btnCreateTable.Name = "btnCreateTable";
             this.btnCreateTable.Size = new System.Drawing.Size(97, 23);
-            this.btnCreateTable.TabIndex = 3;
+            this.btnCreateTable.TabIndex = 4;
             this.btnCreateTable.Text = "Create Table";
             this.btnCreateTable.UseVisualStyleBackColor = true;
             this.btnCreateTable.Click += new System.EventHandler(this.btnCreateTable_Click);
             // 
             // btnCheckDB
             // 
-            this.btnCheckDB.Location = new System.Drawing.Point(678, 17);
+            this.btnCheckDB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCheckDB.Location = new System.Drawing.Point(723, 17);
             this.btnCheckDB.Name = "btnCheckDB";
             this.btnCheckDB.Size = new System.Drawing.Size(47, 23);
-            this.btnCheckDB.TabIndex = 2;
+            this.btnCheckDB.TabIndex = 3;
             this.btnCheckDB.Text = "Check";
             this.btnCheckDB.UseVisualStyleBackColor = true;
             this.btnCheckDB.Click += new System.EventHandler(this.btnCheckDB_Click);
             // 
             // txtTable
             // 
-            this.txtTable.Location = new System.Drawing.Point(501, 17);
+            this.txtTable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTable.Location = new System.Drawing.Point(518, 17);
             this.txtTable.Name = "txtTable";
-            this.txtTable.Size = new System.Drawing.Size(170, 20);
-            this.txtTable.TabIndex = 1;
-            this.txtTable.Text = "TestSonoff";
+            this.txtTable.Size = new System.Drawing.Size(199, 20);
+            this.txtTable.TabIndex = 2;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(461, 20);
+            this.label5.Location = new System.Drawing.Point(478, 20);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(34, 13);
             this.label5.TabIndex = 0;
@@ -257,9 +267,8 @@
             // 
             this.txtDatabase.Location = new System.Drawing.Point(294, 17);
             this.txtDatabase.Name = "txtDatabase";
-            this.txtDatabase.Size = new System.Drawing.Size(161, 20);
+            this.txtDatabase.Size = new System.Drawing.Size(178, 20);
             this.txtDatabase.TabIndex = 1;
-            this.txtDatabase.Text = "Electricity";
             // 
             // label4
             // 
@@ -275,7 +284,7 @@
             this.txtConnectionString.Location = new System.Drawing.Point(90, 17);
             this.txtConnectionString.Name = "txtConnectionString";
             this.txtConnectionString.Size = new System.Drawing.Size(127, 20);
-            this.txtConnectionString.TabIndex = 1;
+            this.txtConnectionString.TabIndex = 0;
             this.txtConnectionString.Text = "Persist Security Info=False;Integrated Security=SSPI; database = Electricity; ser" +
     "ver = Server\\SqlExpress";
             // 
@@ -302,24 +311,26 @@
             this.txtSubscribeTopic.Location = new System.Drawing.Point(102, 122);
             this.txtSubscribeTopic.Name = "txtSubscribeTopic";
             this.txtSubscribeTopic.Size = new System.Drawing.Size(249, 20);
-            this.txtSubscribeTopic.TabIndex = 7;
+            this.txtSubscribeTopic.TabIndex = 3;
             // 
             // btnRun
             // 
-            this.btnRun.Location = new System.Drawing.Point(25, 544);
+            this.btnRun.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnRun.Location = new System.Drawing.Point(16, 592);
             this.btnRun.Name = "btnRun";
             this.btnRun.Size = new System.Drawing.Size(75, 23);
-            this.btnRun.TabIndex = 8;
+            this.btnRun.TabIndex = 7;
             this.btnRun.Text = "Run";
             this.btnRun.UseVisualStyleBackColor = true;
             this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(649, 543);
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.Location = new System.Drawing.Point(707, 592);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 9;
+            this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -333,6 +344,8 @@
             this.olvTopic.AllColumns.Add(this.olvColumn14);
             this.olvTopic.AllColumns.Add(this.olvColumn12);
             this.olvTopic.AllowColumnReorder = true;
+            this.olvTopic.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.olvTopic.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.SingleClickAlways;
             this.olvTopic.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.olvColumn8,
@@ -346,11 +359,11 @@
             this.olvTopic.GridLines = true;
             this.olvTopic.HasCollapsibleGroups = false;
             this.olvTopic.HideSelection = false;
-            this.olvTopic.Location = new System.Drawing.Point(12, 388);
+            this.olvTopic.Location = new System.Drawing.Point(12, 434);
             this.olvTopic.Name = "olvTopic";
             this.olvTopic.ShowGroups = false;
             this.olvTopic.Size = new System.Drawing.Size(776, 70);
-            this.olvTopic.TabIndex = 10;
+            this.olvTopic.TabIndex = 6;
             this.olvTopic.UseCompatibleStateImageBehavior = false;
             this.olvTopic.View = System.Windows.Forms.View.Details;
             this.olvTopic.CellEditFinishing += new BrightIdeasSoftware.CellEditEventHandler(this.olvTopic_CellEditFinishing);
@@ -382,6 +395,11 @@
             this.olvColumn11.AspectName = "dbType";
             this.olvColumn11.Text = "DB Type";
             this.olvColumn11.Width = 100;
+            // 
+            // olvColumn14
+            // 
+            this.olvColumn14.AspectName = "dbSize";
+            this.olvColumn14.Text = "Field Size";
             // 
             // olvColumn12
             // 
@@ -423,8 +441,9 @@
             // 
             // label9
             // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 372);
+            this.label9.Location = new System.Drawing.Point(12, 418);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(95, 13);
             this.label9.TabIndex = 12;
@@ -432,10 +451,12 @@
             // 
             // txtDescription
             // 
+            this.txtDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDescription.Location = new System.Drawing.Point(423, 122);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(365, 20);
-            this.txtDescription.TabIndex = 14;
+            this.txtDescription.TabIndex = 4;
             // 
             // label7
             // 
@@ -446,22 +467,22 @@
             this.label7.TabIndex = 13;
             this.label7.Text = "Description";
             // 
-            // olvColumn13
+            // btnProcessSample
             // 
-            this.olvColumn13.AspectName = "dbSize";
-            this.olvColumn13.DisplayIndex = 7;
-            this.olvColumn13.Text = "Field Size";
-            // 
-            // olvColumn14
-            // 
-            this.olvColumn14.AspectName = "dbSize";
-            this.olvColumn14.Text = "Field Size";
+            this.btnProcessSample.Location = new System.Drawing.Point(102, 57);
+            this.btnProcessSample.Name = "btnProcessSample";
+            this.btnProcessSample.Size = new System.Drawing.Size(101, 23);
+            this.btnProcessSample.TabIndex = 2;
+            this.btnProcessSample.Text = "Process Sample";
+            this.btnProcessSample.UseVisualStyleBackColor = true;
+            this.btnProcessSample.Click += new System.EventHandler(this.btnProcessSample_Click);
             // 
             // CreateMQTTEventHandler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 626);
+            this.ClientSize = new System.Drawing.Size(800, 623);
+            this.Controls.Add(this.btnProcessSample);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label9);
@@ -477,6 +498,7 @@
             this.Controls.Add(this.txtSampleTopic);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MinimumSize = new System.Drawing.Size(629, 471);
             this.Name = "CreateMQTTEventHandler";
             this.Text = "Create MQTT Event Handler";
             ((System.ComponentModel.ISupportInitialize)(this.treeListView)).EndInit();
@@ -531,5 +553,6 @@
         private System.Windows.Forms.Label label7;
         private BrightIdeasSoftware.OLVColumn olvColumn13;
         private BrightIdeasSoftware.OLVColumn olvColumn14;
+        private System.Windows.Forms.Button btnProcessSample;
     }
 }

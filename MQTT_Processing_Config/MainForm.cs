@@ -64,7 +64,9 @@ namespace MQTT_Processing_Config
             dataGridView1.Invoke(new Action(() =>
            {
                System.Diagnostics.Debug.WriteLine("Got msg: " + e.Topic + " " + e.Message.ToString());
-               mqttMessages.Add(new MQTTMessage(e.Topic, Encoding.ASCII.GetString(e.Message)));
+               MQTTMessage msg = new MQTTMessage(e.Topic, Encoding.ASCII.GetString(e.Message));
+               int index = mqttMessages.Add(msg);
+               dataGridView1.CurrentCell = dataGridView1.Rows[index].Cells[0];
            }));
         }
 
@@ -185,6 +187,14 @@ namespace MQTT_Processing_Config
             string host = txtMQTTHostname.Text;
             int port = int.Parse(txtMQTTPort.Text);
             CreateMQTTEventHandler form = new CreateMQTTEventHandler(host,port,xml);
+            form.ShowDialog(this);
+        }
+
+        private void mnuFileNew_Click(object sender, EventArgs e)
+        {
+            string host = txtMQTTHostname.Text;
+            int port = int.Parse(txtMQTTPort.Text);
+            CreateMQTTEventHandler form = new CreateMQTTEventHandler(host, port);
             form.ShowDialog(this);
         }
     }
