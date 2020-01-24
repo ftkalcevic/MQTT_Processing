@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MQTT_Processing_Config.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="MRU" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="MQTTHost" Type="System.String" Scope="User">
+      <Value Profile="(Default)">server</Value>
+    </Setting>
+    <Setting Name="MQTTPort" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1883</Value>
+    </Setting>
+    <Setting Name="MQTTSearchTopic" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

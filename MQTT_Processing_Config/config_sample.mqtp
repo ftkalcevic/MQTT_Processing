@@ -1,0 +1,27 @@
+<MQTTProcessing Description="test">
+  <MQTT>
+    <SubscribeTopic><![CDATA[tele/scales/weight]]></SubscribeTopic>
+    <SampleTopic><![CDATA[tele/scales/weight]]></SampleTopic>
+    <SampleMessage><![CDATA[{ "timestamp": "2020-01-22T06:20:47", "userProfile": 1, "weight": 112.3, "gender": "M", "age": 51, "height": 179, "hydrationPercentage": 47.8, "bodyFatPercentage": 35, "activeMetabolicRate": 2239, "basalMetabolicRate": 1947, "muscleMass": 42.58, "boneMass": 3.6 }]]></SampleMessage>
+  </MQTT>
+  <Message />
+  <Fields>
+    <Field Name="timestamp" SampleValue="22/01/2020 6:20:47 AM" JSONType="Date" InUse="False" DBColumn="timestamp" DBType="DateTime" PrimaryKey="False" ParentPath="" />
+    <Field Name="userProfile" SampleValue="1" JSONType="Integer" InUse="False" DBColumn="userProfile" DBType="Int" PrimaryKey="False" ParentPath="" />
+    <Field Name="weight" SampleValue="112.3" JSONType="Float" InUse="False" DBColumn="weight" DBType="Float" PrimaryKey="False" ParentPath="" />
+    <Field Name="gender" SampleValue="M" JSONType="String" InUse="False" DBColumn="gender" DBType="VarChar" PrimaryKey="False" ParentPath="" />
+    <Field Name="age" SampleValue="51" JSONType="Integer" InUse="False" DBColumn="age" DBType="Int" PrimaryKey="False" ParentPath="" />
+    <Field Name="height" SampleValue="179" JSONType="Integer" InUse="False" DBColumn="height" DBType="Int" PrimaryKey="False" ParentPath="" />
+    <Field Name="hydrationPercentage" SampleValue="47.8" JSONType="Float" InUse="False" DBColumn="hydrationPercentage" DBType="Float" PrimaryKey="False" ParentPath="" />
+    <Field Name="bodyFatPercentage" SampleValue="35" JSONType="Integer" InUse="False" DBColumn="bodyFatPercentage" DBType="Int" PrimaryKey="False" ParentPath="" />
+    <Field Name="activeMetabolicRate" SampleValue="2239" JSONType="Integer" InUse="False" DBColumn="activeMetabolicRate" DBType="Int" PrimaryKey="False" ParentPath="" />
+    <Field Name="basalMetabolicRate" SampleValue="1947" JSONType="Integer" InUse="False" DBColumn="basalMetabolicRate" DBType="Int" PrimaryKey="False" ParentPath="" />
+    <Field Name="muscleMass" SampleValue="42.58" JSONType="Float" InUse="False" DBColumn="muscleMass" DBType="Float" PrimaryKey="False" ParentPath="" />
+    <Field Name="boneMass" SampleValue="3.6" JSONType="Float" InUse="False" DBColumn="boneMass" DBType="Float" PrimaryKey="False" ParentPath="" />
+  </Fields>
+  <Database>
+    <ConnectString><![CDATA[Persist Security Info=False;Integrated Security=SSPI; database = Electricity; server = Server\SqlExpress]]></ConnectString>
+    <Database>Electricity</Database>
+    <Table>TestSonoff</Table>
+  </Database>
+</MQTTProcessing>

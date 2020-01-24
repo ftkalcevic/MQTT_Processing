@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MQTTProcessing Description="ant weight">
+  <MQTT>
+    <SubscribeTopic><![CDATA[tele/scales/weight]]></SubscribeTopic>
+    <SampleTopic>
+      <![CDATA[tele/scales/weight]]>
+    </SampleTopic>
+    <SampleMessage>
+      <![CDATA[{ "timestamp": "2020-01-22T06:20:47", "userProfile": 1, "weight": 112.3, "gender": "M", "age": 51, "height": 179, "hydrationPercentage": 47.8, "bodyFatPercentage": 35, "activeMetabolicRate": 2239, "basalMetabolicRate": 1947, "muscleMass": 42.58, "boneMass": 3.6 }]]>
+    </SampleMessage>
+  </MQTT>
+  <Message>
+    <Fields>
+      <Field Name="timestamp" SampleValue="22/01/2020" JSONType="Date" inUse="true" DBColum="timestamp" DBType="DateTime" PrimaryKey="true"/>
+      <Field Name="userProfile" SampleValue="1" JSONType="Integer" inUse="true" DBColum="userProfile" DBType="Int" primaryKey="true"/>
+      <Field Name="weight" SampleValue="112.3" JSONType="Float" inUse="true" DBColum="weight" DBType="Float" primaryKey="false"/>
+    </Fields>
+  </Message>
+  <Database>
+    <ConnectString><![CDATA[Persist Security Info=False;Integrated Security=SSPI; database = Electricity; server = Server\SqlExpress]]></ConnectString>
+    <Database>Electricity</Database>
+    <Table>TestSonoff</Table>
+  </Database>
+</MQTTProcessing>
