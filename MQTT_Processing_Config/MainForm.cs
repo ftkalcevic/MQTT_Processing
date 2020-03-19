@@ -51,10 +51,17 @@ namespace MQTT_Processing_Config
         {
             if (listening)
             {
-                mqttClient.Disconnect();
-                mqttClient = null;
-                listening = false;
-                btnMQTTListen.Text = "Listen";
+                try
+                {
+                    mqttClient.Disconnect();
+                    mqttClient = null;
+                    listening = false;
+                    btnMQTTListen.Text = "Listen";
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.ToString());
+                }
             }
             else
             {
