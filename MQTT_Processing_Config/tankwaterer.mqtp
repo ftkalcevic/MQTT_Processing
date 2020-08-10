@@ -1,1 +1,29 @@
-<MQTTProcessing Description="Water Tank Messages"><MQTT><SubscribeTopic><![CDATA[/tele/TankWaterer/+/info]]></SubscribeTopic><SampleTopic><![CDATA[/tele/TankWaterer/0013A20041073FB6/info]]></SampleTopic><SampleMessage><![CDATA[{"HighWaterMark":false,"ValveOpen":false,"Moisture1":475,"Moisture2":909,"TankVolume":447,"TankFlow":173.1,"TankOverflow":3.9,"Temperature":27.3,"timestamp":"2020-02-14T18:11:56.6998174+11:00"}]]></SampleMessage></MQTT><Message><Fields><Field Name="HighWaterMark" SampleValue="False" JSONType="Boolean" InUse="True" DBColumn="HighWaterMark" DBType="Bit" DBSize="0" PrimaryKey="False" ParentPath="" /><Field Name="ValveOpen" SampleValue="False" JSONType="Boolean" InUse="True" DBColumn="ValveOpen" DBType="Bit" DBSize="0" PrimaryKey="False" ParentPath="" /><Field Name="Moisture1" SampleValue="475" JSONType="Integer" InUse="True" DBColumn="Moisture1" DBType="Int" DBSize="0" PrimaryKey="False" ParentPath="" /><Field Name="Moisture2" SampleValue="909" JSONType="Integer" InUse="True" DBColumn="Moisture2" DBType="Int" DBSize="0" PrimaryKey="False" ParentPath="" /><Field Name="TankVolume" SampleValue="447" JSONType="Integer" InUse="True" DBColumn="TankVolume" DBType="Int" DBSize="0" PrimaryKey="False" ParentPath="" /><Field Name="TankFlow" SampleValue="173.1" JSONType="Float" InUse="True" DBColumn="TankFlow" DBType="Float" DBSize="0" PrimaryKey="False" ParentPath="" /><Field Name="TankOverflow" SampleValue="3.9" JSONType="Float" InUse="True" DBColumn="TankOverflow" DBType="Float" DBSize="0" PrimaryKey="False" ParentPath="" /><Field Name="Temperature" SampleValue="27.3" JSONType="Float" InUse="True" DBColumn="Temperature" DBType="Float" DBSize="0" PrimaryKey="False" ParentPath="" /><Field Name="timestamp" SampleValue="14/02/2020 6:11:56 PM" JSONType="Date" InUse="True" DBColumn="timestamp" DBType="DateTime" DBSize="0" PrimaryKey="True" ParentPath="" /></Fields><TopicFields><TopicField DBColumn="DeviceId" DBType="VarChar" DBSize="16" PrimaryKey="True"><![CDATA[/tele/TankWaterer/(.*)/info]]></TopicField></TopicFields></Message><Database><ConnectString><![CDATA[Persist Security Info=False;Integrated Security=SSPI; database = Electricity; server = Server\SqlExpress]]></ConnectString><Database>Electricity</Database><Table>TankWaterer</Table></Database></MQTTProcessing>
+<MQTTProcessing Description="Water Tank Messages">
+  <MQTT>
+    <SubscribeTopic><![CDATA[/tele/TankWaterer/+/info]]></SubscribeTopic>
+    <SampleTopic><![CDATA[/tele/TankWaterer/0013A20041073FB6/info]]></SampleTopic>
+    <SampleMessage><![CDATA[{"HighWaterMark":false,"ValveOpen":false,"Moisture1":475,"Moisture2":909,"TankVolume":447,"TankFlow":173.1,"TankOverflow":3.9,"Temperature":27.3,"timestamp":"2020-02-14T18:11:56.6998174+11:00"}]]></SampleMessage>
+  </MQTT>
+  <Message>
+    <Fields>
+      <Field Name="HighWaterMark" SampleValue="False" JSONType="Boolean" InUse="True" DBColumn="HighWaterMark" DBType="Bit" DBSize="0" PrimaryKey="False" ParentPath="" />
+      <Field Name="ValveOpen" SampleValue="False" JSONType="Boolean" InUse="True" DBColumn="ValveOpen" DBType="Bit" DBSize="0" PrimaryKey="False" ParentPath="" />
+      <Field Name="Moisture1" SampleValue="475" JSONType="Integer" InUse="True" DBColumn="Moisture1" DBType="Int" DBSize="0" PrimaryKey="False" ParentPath="" />
+      <Field Name="Moisture2" SampleValue="909" JSONType="Integer" InUse="True" DBColumn="Moisture2" DBType="Int" DBSize="0" PrimaryKey="False" ParentPath="" />
+      <Field Name="TankVolume" SampleValue="447" JSONType="Integer" InUse="True" DBColumn="TankVolume" DBType="Int" DBSize="0" PrimaryKey="False" ParentPath="" />
+      <Field Name="TankFlow" SampleValue="173.1" JSONType="Float" InUse="True" DBColumn="TankFlow" DBType="Float" DBSize="0" PrimaryKey="False" ParentPath="" />
+      <Field Name="TankOverflow" SampleValue="3.9" JSONType="Float" InUse="True" DBColumn="TankOverflow" DBType="Float" DBSize="0" PrimaryKey="False" ParentPath="" />
+      <Field Name="Water24Hours" SampleValue="3.9" JSONType="Float" InUse="True" DBColumn="Water24Hours" DBType="Float" DBSize="0" PrimaryKey="False" ParentPath="" />
+      <Field Name="Temperature" SampleValue="27.3" JSONType="Float" InUse="True" DBColumn="Temperature" DBType="Float" DBSize="0" PrimaryKey="False" ParentPath="" />
+      <Field Name="timestamp" SampleValue="14/02/2020 6:11:56 PM" JSONType="Date" InUse="True" DBColumn="timestamp" DBType="DateTime" DBSize="0" PrimaryKey="True" ParentPath="" />
+    </Fields>
+    <TopicFields>
+      <TopicField DBColumn="DeviceId" DBType="VarChar" DBSize="16" PrimaryKey="True"><![CDATA[/tele/TankWaterer/(.*)/info]]></TopicField>
+    </TopicFields>
+  </Message>
+  <Database>
+    <ConnectString><![CDATA[Persist Security Info=False;Integrated Security=SSPI; database = Electricity; server = Server\SqlExpress]]></ConnectString>
+    <Database>Electricity</Database>
+    <Table>TankWaterer</Table>
+  </Database>
+</MQTTProcessing>
